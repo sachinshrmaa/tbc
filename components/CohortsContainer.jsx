@@ -44,7 +44,7 @@ export default function CohortsContainer() {
             Get Started
           </h1>
           <p className="mb-2 text-md">
-            The cohorts can be accessed remotely via Google meet.
+            You don’&apos;t learn, then start. You start, then learn
           </p>
         </div>
         <div className="md:col-span-2">

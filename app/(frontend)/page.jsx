@@ -16,6 +16,8 @@ export default function page() {
           </span>{" "}
           Repeat.
         </h1>
+
+        
         <p className="mb-6">
           Our cohorts bring together students from across India to learn and
           grow. Students benefit from peer and mentor support, collaboration,

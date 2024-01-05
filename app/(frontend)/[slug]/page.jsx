@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function DetailedCohort({ params }) {
   const [cohort, setCohort] = useState({});
@@ -9,24 +10,21 @@ export default function DetailedCohort({ params }) {
   const [error, setError] = useState(false);
   const slug = params.slug;
 
-  console.log(slug);
+  const fetchCohort = async () => {
+    try {
+      setLoading(true);
+      const res = await axios.get(`/api/cohorts/${slug}`);
+      setCohort(res.data);
+      setLoading(false);
+    } catch (err) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        setLoading(true);
-        const res = await axios.get(`/api/cohorts/${slug}`);
-        const loadedCohort = res.data;
-        setCohort(loadedCohort);
-        setLoading(false);
-      } catch (error) {
-        setError(true);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchData();
+    fetchCohort();
   }, []);
 
   if (loading) {
@@ -36,9 +34,6 @@ export default function DetailedCohort({ params }) {
   if (error) {
     return <p className="text-center">Something went wrong.</p>;
   }
-
-  console.log(cohort);
-
 
   return (
     <div className="max-w-7xl mx-auto px-5 py-6 min-h-[70vh]">
@@ -82,9 +77,9 @@ export default function DetailedCohort({ params }) {
           </Link>
         </div>
         <div className="rounded-3xl p-10 bg-slate-100 col-span-3">
-          <h1 className="font-bold text-xl md:text-3xl mb-3 md:mb-5">python</h1>
+          <h1 className="font-bold text-xl md:text-3xl mb-3 md:mb-5">{cohort.name}</h1>
 
-          <p className="mb-6">description</p>
+          <p className="mb-6">{cohort.description}</p>
 
           {/* <div dangerouslySetInnerHTML={{ __html: cohort.content }} /> */}
         </div>
