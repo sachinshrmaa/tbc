@@ -24,7 +24,7 @@ export default function Footer() {
       </div>
       <div className="text-center py-4 px-6 border-t border-t-slate-100">
         <small className="text-slate-900">
-          &copy;2023 - present The Basics Class <span className="mx-2">•</span>{" "}
+          &copy;2022 - present The Basics Class <span className="mx-2">•</span>{" "}
           Made with ❤ by{" "}
           <Link href="https://work.sachinsblog.in" className="text-slate-900">
             Sachin
