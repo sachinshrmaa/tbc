@@ -34,8 +34,6 @@ export default function TestimonialContainer() {
     return <p className="text-center">Something went wrong.</p>;
   }
 
-  console.log(testimonials);
-
   return (
     <section className="bg-slate-100 p-6 md:p-10 rounded-3xl my-10 md:my-15">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-7">
@@ -47,10 +45,6 @@ export default function TestimonialContainer() {
             What other people has to say about the basics class..
           </p>
         </div>
-        {/* 
-        {testimonials.map((t) => (
-          <TestimonialCard />
-        ))} */}
 
         {testimonials.map((t) => (
           <TestimonialCard
