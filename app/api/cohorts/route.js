@@ -8,12 +8,9 @@ connectDB();
 export async function GET() {
   try {
     const cohorts = await Cohort.find();
-    return NextResponse.json(
-      { cohorts },
-      {
-        status: 200,
-      }
-    );
+    return NextResponse.json(cohorts, {
+      status: 200,
+    });
   } catch (err) {
     return NextResponse.json(
       { err },
