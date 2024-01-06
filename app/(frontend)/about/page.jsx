@@ -29,7 +29,7 @@ export default function About() {
         company, where he focuses on works related to frontend development.
       </p>
       <p className="my-3">
-        He’&apos;s also pursuing his Bachelor's degree in Computer Engineering
+        He&apos;s also pursuing his Bachelor&apos;s degree in Computer Engineering
         from SIST (Sikkim Institute of Science and Technology).
       </p>
       <p className="my-3">
