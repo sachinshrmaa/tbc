@@ -1,5 +1,11 @@
 import React from "react";
 
+export const metadata = {
+  title: "Contact - The Basics Class",
+  description:
+    "If you have any questions or comments, we would love to hear from you.",
+};
+
 export default function Contact() {
   return (
     <div className="max-w-7xl mx-auto px-5 py-6 min-h-[70vh]">
@@ -22,8 +28,8 @@ export default function Contact() {
         </div>
         <div className="col-span-3 rounded-3xl bg-slate-100 p-10">
           <p className="my-4">
-            Thank you for visiting the basics website! If you have any questions
-            or comments, we would love to hear from you.
+            Thank you for visiting the basics class website! If you have any
+            questions or comments, we would love to hear from you.
           </p>
 
           <p className="my-4">
