@@ -7,3 +7,16 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+h2{
+  margin: 15px 0;
+}
+
+ul{
+  margin: 10px;
+}
+
+li{
+  list-style: circle;
+  margin-left: 25px;
+}

@@ -11,6 +11,9 @@ const cohortSchema = new mongoose.Schema(
     description: {
       type: String,
     },
+    thumbnail: {
+      type: String,
+    },
     price: {
       type: Number,
     },

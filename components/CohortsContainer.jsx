@@ -1,7 +1,6 @@
 "use client";
 
 import axios from "axios";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import CohortCard from "./CohortCard";
 
@@ -9,6 +8,8 @@ export default function CohortsContainer() {
   const [cohorts, setCohorts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
+  console.log(cohorts);
 
   useEffect(() => {
     async function fetchData() {
@@ -53,6 +54,7 @@ export default function CohortsContainer() {
               name={cohort.name}
               slug={cohort.slug}
               price={cohort.price}
+              thumbnail={cohort.thumbnail}
               description={cohort.description}
             />
           ))}

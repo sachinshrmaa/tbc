@@ -41,16 +41,15 @@ export default function DetailedCohort({ params }) {
         ← back to home
       </Link>
 
-      {/* {course.map((cohort) => ( */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-6">
         <div className="col-span-3 md:col-span-2">
-          {/* <Image
-              src={cohort.thumbnail}
-              height="400"
-              width="1500"
-              alt="Winter training for Civil"
-              className="rounded-3xl w-full"
-            /> */}
+          <Image
+            src={cohort.thumbnail}
+            height="400"
+            width="1500"
+            alt={cohort.name}
+            className="rounded-3xl w-full"
+          />
         </div>
         <div className="rounded-3xl p-8 bg-slate-100 col-span-3 md:col-span-1 flex flex-col justify-between">
           <div>
@@ -60,51 +59,53 @@ export default function DetailedCohort({ params }) {
             </p>
 
             <p className="text-lg mb-4">
-              <b> Duration: </b>1 months
+              <b> Duration: </b>1 month (4 weeks)
             </p>
 
             <p className="text-lg mb-4">
-              <b> Starts From: </b>December 2023 - Jan 2024
+              <b> Starts From: </b>Jan 2024 - Feb 2024
             </p>
           </div>
 
           <Link
-            href="#"
+            href="https://forms.gle/Ey46LUXokeZtoJdf6"
             target="_blank"
-            className="bg-slate-700 hover:bg-slate-800 text-white py-2 md:py-3 rounded-md block text-center"
+            className="bg-blue-700 hover:bg-blue-800 text-white py-2 md:py-3 rounded-md block text-center"
           >
             Enroll
           </Link>
         </div>
         <div className="rounded-3xl p-10 bg-slate-100 col-span-3">
-          <h1 className="font-bold text-xl md:text-3xl mb-3 md:mb-5">{cohort.name}</h1>
+          <h1 className="font-bold text-xl md:text-3xl mb-3 md:mb-5">
+            {cohort.name}
+          </h1>
 
-          <p className="mb-6">{cohort.description}</p>
-
-          {/* <div dangerouslySetInnerHTML={{ __html: cohort.content }} /> */}
+          <div
+            className="mb-6"
+            dangerouslySetInnerHTML={{ __html: cohort.description }}
+          />
         </div>
       </div>
-      {/* ))} */}
 
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-8 my-12 rounded-3xl">
+      {/* <section className="grid grid-cols-1 md:grid-cols-3 gap-8 my-12 rounded-3xl">
         <div>
-          {/* <Image
+          <Image
               src={cohort.instructorImg}
               height="400"
               width="1500"
               alt="Winter training for Civil"
               className="rounded-3xl w-full"
-            /> */}
+            />
         </div>
         <div className="bg-slate-100 p-10 rounded-3xl md:col-span-2">
           <h1 className="font-bold text-xl md:text-3xl mb-3 md:mb-5">
             Meet the Instructor
           </h1>
-          {/* <div
+          <div
               dangerouslySetInnerHTML={{ __html: cohort.instructorDetails }}
-            /> */}
+            />
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

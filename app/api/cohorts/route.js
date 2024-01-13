@@ -23,7 +23,7 @@ export async function GET() {
 
 export async function POST(request) {
   const formData = await request.json();
-  const { name, slug, price, description } = formData;
+  const { name, slug, price, description, thumbnail } = formData;
 
   // check if cohort already exists
   const cohort = await Cohort.findOne({ slug });
@@ -43,6 +43,7 @@ export async function POST(request) {
     slug,
     price,
     description,
+    thumbnail,
   });
 
   const savedCohort = await newCohort.save();

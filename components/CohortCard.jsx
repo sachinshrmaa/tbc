@@ -1,16 +1,29 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
-export default function CohortCard({name, price, slug, description}) {
+export default function CohortCard({
+  name,
+  price,
+  slug,
+  description,
+  thumbnail,
+}) {
+  const trimDes = (content) => {
+    const res = `${content.slice(0, 270)}...`;
+    return res;
+  };
+
+
   return (
     <div className="border rounded-2xl bg-slate-100 mb-6">
-      {/* <Image
-                src={thumbnail}
-                height="400"
-                width="1500"
-                alt="Winter training for Civil"
-                className="rounded-t-2xl w-full"
-              /> */}
+      <Image
+        src={thumbnail}
+        height="400"
+        width="1500"
+        alt={name}
+        className="rounded-t-2xl w-full"
+      />
       <div className="p-4 md:p-8">
         <div className="flex gap-4 mb-2 md:mb-4">
           <small className="bg-yellow-300 px-6 py-1 rounded-xl text-sm capitalize">
@@ -20,24 +33,18 @@ export default function CohortCard({name, price, slug, description}) {
             limited seats
           </small>
         </div>
-        <h1 className="font-bold text-xl md:text-3xl mb-3 md:mb-5">
-          {name}
-        </h1>
+        <h1 className="font-bold text-xl md:text-3xl mb-3 md:mb-5">{name}</h1>
 
-        <p className="mb-6">{description}</p>
+        <div
+          className="mb-6"
+          dangerouslySetInnerHTML={{ __html: trimDes(description) }}
+        />
 
         <div className="flex justify-between">
           <div className="flex">
             <Link
               href={slug}
-              target="_blank"
-              className="bg-blue-700 hover:bg-blue-800 text-white px-7 md:px-14 py-2 md:py-3 rounded-md mr-4"
-            >
-              Enroll
-            </Link>
-            <Link
-              href={slug}
-              className="py-2 md:py-3 ml-4 text-blue-700 hover:text-blue-800"
+              className="py-2 md:py-3 text-blue-700 hover:text-blue-800"
             >
               Learn more
             </Link>
