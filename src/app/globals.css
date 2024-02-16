@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body{
-    background-color: #03152c;
+body {
+  background-color: #03152c;
 }
 
-.secondary-bg{
-    background-color: #032149;
+.secondary-bg {
+  background-color: #032149;
 }
 
