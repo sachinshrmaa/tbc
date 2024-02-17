@@ -21,8 +21,8 @@ export default function About() {
       </h1>
       <p className="text-slate-400">
         Sachin is currently working as an Intern for a cloud-based startup
-        company, where he focuses on works related to frontend development. He's
-        also pursuing his Bachelor's degree in Computer Engineering from SIST
+        company, where he focuses on works related to frontend development. He&apos;s
+        also pursuing his Bachelor&apos;s degree in Computer Engineering from SIST
         (Sikkim Institute of Science and Technology). Previously, he also
         completed his Diploma in Computer Engineering with a distinction grade.
         Apart from studies and work, he actively builds and contributes to

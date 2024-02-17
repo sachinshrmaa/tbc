@@ -52,8 +52,8 @@ export default function Home() {
           </p>
         </div>
         <div className="grid grid-flow-row md:grid-flow-col gap-6 md:gap-10">
-          {workings.map((e) => (
-            <WorkingCard title={e.title} desc={e.desc} icon={e.icon} />
+          {workings.map((e, i) => (
+            <WorkingCard key={i} title={e.title} desc={e.desc} icon={e.icon} />
           ))}
         </div>
       </section>
@@ -127,8 +127,9 @@ export default function Home() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-6 md:gap-10">
-          {testimonials.map((feedback) => (
+          {testimonials.map((feedback, index) => (
             <TestimonialCard
+              key={index}
               name={feedback.name}
               userMeta={feedback.userMeta}
               feedback={feedback.feedback}
