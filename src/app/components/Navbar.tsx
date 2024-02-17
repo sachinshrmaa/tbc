@@ -35,9 +35,9 @@ const NavBar = () => {
               </Link>
               <Link
                 className="bg-purple-600 px-6 py-2 rounded-md mr-4 hover:bg-purple-400"
-                href="#"
+                href="#get-started"
               >
-                Join
+                Get Started
               </Link>
             </div>
           </div>

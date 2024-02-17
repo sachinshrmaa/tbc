@@ -23,13 +23,13 @@ export default function Home() {
         </p>
         <div className="mt-8 mb-6">
           <Link
-            href="#"
+            href="#get-started"
             className="bg-purple-600 px-6 py-2 rounded-md mr-4 hover:bg-purple-400"
           >
-            Join Cohort
+            Get Started
           </Link>
           <Link
-            href="#"
+            href="#get-started"
             className="bg-slate-600 px-6 py-2 rounded-md hover:bg-blue-700"
           >
             Explore
@@ -58,7 +58,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-5 max-w-6xl mx-auto my-4 md:my-10 px-8">
+      <section
+        id="get-started"
+        className="py-5 max-w-6xl mx-auto my-4 md:my-10 px-8"
+      >
         <div className="grid md:grid-cols-6 md:grid-flow-col gap-6 md:gap-10">
           <div className="col-span-24 md:col-span-2">
             <h1 className="text-2xl md:text-3xl mb-0 md:mb-1">
@@ -96,14 +99,15 @@ export default function Home() {
 
                 <div className="mt-6 mb-1">
                   <Link
-                    href="#"
+                    href="https://forms.gle/YYfcSUABnvzVDRQV6"
+                    target="_blank"
                     className="bg-purple-600 px-6 py-1 md:py-2 rounded-md mr-1 hover:bg-purple-400 text-sm md:text-md"
                   >
                     Join
                   </Link>
                   <Link
-                    href="#"
-                    className="text-slate-400 px-6 py-2 rounded-md hover:text-blue-700 text-sm md:text-md"
+                    href="/python-cohort"
+                    className="text-slate-400 px-6 py-2 rounded-md hover:text-purple-700 text-sm md:text-md"
                   >
                     Learn more
                   </Link>
@@ -154,7 +158,12 @@ export default function Home() {
         </div>
         <p className="text-slate-400 text-center text-sm">
           Still confused? Feel free to{" "}
-          <Link href="mailto:mail.sachinshrmaa@gmail.com" className="text-purple-600 hover:text-purple-700">reach out to us</Link>
+          <Link
+            href="mailto:mail.sachinshrmaa@gmail.com"
+            className="text-purple-600 hover:text-purple-700"
+          >
+            reach out to us
+          </Link>
           .
         </p>
       </section>
