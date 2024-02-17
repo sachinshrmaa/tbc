@@ -34,7 +34,7 @@ export default function Accordion({ name, content }: Props) {
         <span>+</span>
       </button>
       <div
-        className="py-2 px-1 rounded-md text-slate-400"
+        className="py-2 px-1 rounded-md text-slate-400 text-sm"
         style={{ display: isShowing ? "block" : "none" }}
       >
         <div dangerouslySetInnerHTML={{ __html: content }}></div>

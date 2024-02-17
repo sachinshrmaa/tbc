@@ -4,24 +4,9 @@ import WorkingCard from "./components/WorkingCard";
 import Image from "next/image";
 import TestimonialCard from "./components/TestimonialCard";
 import Accordion from "./components/Accordion";
-
-export const workings = [
-  {
-    title: "Pick a Class.",
-    desc: "this is a text",
-    icon: "./arrow-right.svg",
-  },
-  {
-    title: "Learn.",
-    desc: "this is a text",
-    icon: "./arrow-right.svg",
-  },
-  {
-    title: "Build.",
-    desc: "this is a text",
-    icon: "./target.svg",
-  },
-];
+import { workings } from "../../data/working";
+import { testimonials } from "../../data/testimonial";
+import { faq } from "../../data/faq";
 
 export default function Home() {
   return (
@@ -63,7 +48,7 @@ export default function Home() {
             How does it <span className="text-purple-600">work?</span>
           </h1>
           <p className="text-slate-400 text-sm md:text-md">
-            Lorem ipsum dolor sit.
+            It&apos;s pretty simple.
           </p>
         </div>
         <div className="grid grid-flow-row md:grid-flow-col gap-6 md:gap-10">
@@ -80,7 +65,7 @@ export default function Home() {
               Getting <span className="text-purple-600">started?</span>
             </h1>
             <p className="text-slate-400 text-sm md:text-md">
-              Lorem ipsum dolor sit.
+              Pick the course that interests you.
             </p>
           </div>
           <div className="col-span-24 md:col-span-4">
@@ -142,10 +127,13 @@ export default function Home() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-6 md:gap-10">
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
+          {testimonials.map((feedback) => (
+            <TestimonialCard
+              name={feedback.name}
+              userMeta={feedback.userMeta}
+              feedback={feedback.feedback}
+            />
+          ))}
         </div>
       </section>
 
@@ -159,14 +147,14 @@ export default function Home() {
           </p>
         </div>
         <div className="mb-4">
-          <Accordion name="Who is behind TBC?" content="this is a mesasge" />
-          <Accordion
-            name="Is the cohort live or recorded?"
-            content="this is a mesasge"
-          />
+          {faq.map((faq) => (
+            <Accordion key={faq.id} name={faq.question} content={faq.answer} />
+          ))}
         </div>
         <p className="text-slate-400 text-center text-sm">
-          Still confused? Feel free to reach out to us.
+          Still confused? Feel free to{" "}
+          <Link href="mailto:mail.sachinshrmaa@gmail.com" className="text-purple-600 hover:text-purple-700">reach out to us</Link>
+          .
         </p>
       </section>
     </main>
