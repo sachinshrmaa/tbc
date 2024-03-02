@@ -21,7 +21,7 @@ export default function WorkingCard({ title, desc, icon }: Props) {
         />
       </div>
 
-      <p className="text-slate-400">{desc}</p>
+      <p className="text-slate-400 text-sm md:text-md">{desc}</p>
     </div>
   );
 }
