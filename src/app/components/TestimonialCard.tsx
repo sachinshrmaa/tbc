@@ -11,9 +11,7 @@ export default function TestimonialCard({name, feedback, userMeta}: Props) {
     <div className="secondary-bg rounded-lg p-5">
       <p className="text-lg font-semibold my-0">{name}</p>
       <small className="text-slate-400 mt-0">{userMeta}</small>
-      <p className="text-slate-400 mt-2">
-        {feedback}
-      </p>
+      <p className="text-slate-400 mt-2 text-sm md:text-md">{feedback}</p>
     </div>
   );
 }

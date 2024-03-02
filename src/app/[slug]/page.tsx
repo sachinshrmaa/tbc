@@ -9,7 +9,25 @@ export default function DetailedPage() {
         ← back to home
       </Link>
       <div className="grid md:grid-flow-col md:grid-cols-8 mt-4 gap-6">
-        <div className="col-span-5">
+        <div className="col-span-8 md:hidden md:col-span-3">
+          <Image
+            src="/python-cohort.jpg"
+            width="1000"
+            height="700"
+            alt="python cohort"
+            className="rounded-lg"
+          />
+          <div className="mt-8">
+            <Link
+              href="https://forms.gle/YYfcSUABnvzVDRQV6"
+              target="_blank"
+              className="bg-purple-600 text-center py-1 md:py-2 rounded-md mr-1 hover:bg-purple-400 text-sm md:text-md block"
+            >
+              Enroll Now
+            </Link>
+          </div>
+        </div>
+        <div className="col-span-8 md:col-span-5">
           <h1 className="text-md md:text-2xl font-semibold mb-4">
             Introduction to Python and Data Analysis
           </h1>
@@ -20,7 +38,7 @@ export default function DetailedPage() {
             it with implementing all the knowledge to perform.
           </p>
         </div>
-        <div className="col-span-3">
+        <div className="hidden md:block col-span-3">
           <Image
             src="/python-cohort.jpg"
             width="1000"

@@ -7,6 +7,7 @@ import Accordion from "./components/Accordion";
 import { workings } from "../../data/working";
 import { testimonials } from "../../data/testimonial";
 import { faq } from "../../data/faq";
+import InstructorCard from "./components/InstructorCard";
 
 export default function Home() {
   return (
@@ -119,6 +120,18 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="py-16 max-w-5xl mx-auto my-10 px-8">
+        <div className="text-center mb-8">
+          <h1 className="text-2xl md:text-3xl mb-0 md:mb-1">
+            Meet <span className="text-purple-600">Sachin.</span>
+          </h1>
+          <p className="text-slate-400 text-sm md:text-md">
+            The person behind the basics class.
+          </p>
+        </div>
+        <InstructorCard />
       </section>
 
       <section className="py-16 max-w-4xl mx-auto my-10 px-8">
