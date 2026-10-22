@@ -1,34 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { about } from "../../../data/about";
 
 export default function InstructorCard() {
+  const { teacher } = about;
+
   return (
-    <div className="secondary-bg rounded-lg p-5 grid md:grid-flow-col grid-cols-8 gap-2 md:gap-5">
-      <div className="col-span-8 md:col-span-2">
-        <Image
-          src="/sachin.jpg"
-          alt="sachin sharma"
-          height="500"
-          width="400"
-          className="border-2 border-purple-600 rounded-lg "
-        />
-      </div>
-      <div className="col-span-8 md:col-span-6">
-        <p className="text-slate-400 my-2 text-sm md:text-md">
-          There are millions, if not billions of things to learn for any given
-          skill, and nobody has figured out everything and that&apos;s how the
-          world works. Everybody knows a thing or two and so do I and
-          that&apos;s enough to get my work done. So why not pass down
-          everything I know and find some along the way so that you can get your
-          work done and figure out the rest by yourself?
-        </p>
-        <p className="text-slate-400 my-2 text-sm md:text-md">
-          Hi, I&apos;m Sachin👋, currently working as an Intern for a
-          cloud-based startup company, where I work on things related to
-          frontend development. I&apos;m also pursuing my Bachelor&apos;s degree
-          in Computer Engineering.
-        </p>
+    <div className="card grid items-center gap-8 p-6 sm:p-8 md:grid-cols-[16rem_1fr] md:gap-12">
+      <Image
+        src="/sachin.jpg"
+        alt="Sachin Sharma"
+        width={480}
+        height={640}
+        sizes="(min-width: 768px) 16rem, 100vw"
+        className="aspect-[4/5] w-full max-w-[16rem] rounded-lg object-cover"
+      />
+      <div>
+        <p className="label">Your teacher</p>
+        <h2 className="section-title">{teacher.greeting}</h2>
+        <p className="mt-5 text-lg">{teacher.lead}</p>
+        <p className="mt-4 text-muted">{teacher.blurb}</p>
+        <div className="mt-6 flex flex-wrap gap-2">
+          {teacher.tags.map((t) => (
+            <span key={t} className="rounded-md bg-ink/5 px-2.5 py-1 text-sm text-muted">
+              {t}
+            </span>
+          ))}
+        </div>
+        <Link href="/about" className="link mt-6 inline-block text-[15px]">
+          More about me and TBC &rarr;
+        </Link>
       </div>
     </div>
   );

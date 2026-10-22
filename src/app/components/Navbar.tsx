@@ -1,94 +1,37 @@
-"use client";
-
 import Link from "next/link";
-import React, { useState } from "react";
 
-const NavBar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const links = [
+  { href: "/#cohorts", label: "Cohorts" },
+  { href: "/#how-it-works", label: "How it works" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+export default function Navbar() {
   return (
-    <nav className="w-full">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-lg font-bold hover:text-purple-600">
-              TheBasicsClass
-            </Link>
-          </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <Link
-                className="px-1 py-2 text-sm font-medium hover:text-purple-600"
-                href="/about"
-              >
-                About
-              </Link>
-              <Link
-                className="px-2 py-2 text-sm font-medium hover:text-purple-600"
-                href="/contact"
-              >
-                Contact
-              </Link>
-              <Link
-                className="bg-purple-600 px-6 py-2 rounded-md mr-4 hover:bg-purple-400"
-                href="#get-started"
-              >
-                Get Started
-              </Link>
-            </div>
-          </div>
-          <div className="-mr-2 flex md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-slate-400  hover:bg-slate-700 transition duration-150 ease-in-out"
+    <header className="sticky top-0 z-20 border-b border-rule bg-paper/80 backdrop-blur-md">
+      <div className="container flex h-16 items-center justify-between gap-6">
+        <Link href="/" className="flex items-center gap-2.5 font-semibold tracking-tight">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-ink font-mono text-[11px] font-bold text-paper">
+            TBC
+          </span>
+          <span className="hidden sm:inline">TheBasicsClass</span>
+        </Link>
+        <nav className="flex items-center gap-1 text-[15px]">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="hidden rounded-md px-3 py-1.5 text-muted transition-colors hover:bg-ink/5 hover:text-ink md:block"
             >
-              <svg
-                className="h-6 w-6"
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+              {l.label}
+            </Link>
+          ))}
+          <Link href="/register" className="btn ml-2 px-4 py-2">
+            Register
+          </Link>
+        </nav>
       </div>
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pb-3 sm:px-3">
-            <Link
-              href="/about"
-              className=" hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium mb-4"
-            >
-              Contact
-            </Link>
-            <Link
-              className="bg-purple-600 px-6 py-2 rounded-md mr-4 hover:bg-purple-400 ml-3"
-              href="#"
-            >
-              Enroll
-            </Link>
-          </div>
-        </div>
-      )}
-    </nav>
+    </header>
   );
-};
-
-export default NavBar;
+}

@@ -1,44 +1,19 @@
-"use client";
-import { useState } from "react";
-
-interface Props {
+interface AccordionProps {
   name: string;
   content: string;
 }
 
-export default function Accordion({ name, content }: Props) {
-  const [isShowing, setIsShowing] = useState(false);
-
-  const toggle = () => {
-    setIsShowing(!isShowing);
-  };
-
+// Native <details> — accessible and needs no client JavaScript.
+export default function Accordion({ name, content }: AccordionProps) {
   return (
-    <div className="secondary-bg rounded-xl p-4 my-4">
-      <button
-        style={{
-          width: "100%",
-          position: "relative",
-          textAlign: "left",
-          padding: "4px",
-          border: "none",
-          background: "transparent",
-          outline: "none",
-          cursor: "pointer",
-        }}
-        onClick={toggle}
-        type="button"
-        className="flex justify-between"
-      >
-        <span>{name}</span>
-        <span>+</span>
-      </button>
-      <div
-        className="py-2 px-1 rounded-md text-slate-400 text-sm"
-        style={{ display: isShowing ? "block" : "none" }}
-      >
-        <div dangerouslySetInnerHTML={{ __html: content }}></div>
-      </div>
-    </div>
+    <details className="group border-b border-rule py-5">
+      <summary className="flex cursor-pointer list-none items-baseline justify-between gap-4 font-medium [&::-webkit-details-marker]:hidden">
+        {name}
+        <span aria-hidden className="font-mono text-muted transition-transform group-open:rotate-45">
+          +
+        </span>
+      </summary>
+      <p className="mt-3 pr-8 text-muted">{content}</p>
+    </details>
   );
 }

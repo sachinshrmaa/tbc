@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TheBasicsClass
 
-## Getting Started
-
-First, run the development server:
+A text-first site for running live coding cohorts and registering students.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Site content lives in `content/` as Markdown files. Edit them, commit and push — the
+site rebuilds and picks up the changes (locally, `npm run dev` shows them on reload).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `content/cohorts/*.md` — one file per cohort; the file name is the URL
+  (`/cohorts/<file-name>`). Copy `_template.md` to add one. Set `status` to `open`,
+  `waitlist` or `closed`. Cohorts are listed by `startDate`.
+- `content/testimonials/*.md` — one file per testimonial, shown in file-name order.
+- `content/about.md` — About page, plus the "Your teacher" card on the home page.
+- `content/payment.md` — your UPI ID. After registering, students see a QR code and a
+  "Pay with UPI app" button with the cohort fee pre-filled. Leave `upiId` empty to hide it.
 
-## Learn More
+Files whose name starts with `_` are ignored. `data/faq.ts` and `data/working.ts` are
+still plain TypeScript.
 
-To learn more about Next.js, take a look at the following resources:
+## Where registrations go
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The form on each cohort page (and `/register`) validates input on the server, then:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Locally**, with no config: appends one JSON line per registration to
+  `registrations.jsonl` (git-ignored).
+- **In production** (Vercel etc. can't write files): set `REGISTRATION_WEBHOOK_URL`
+  and each registration is POSTed there as JSON:
 
-## Deploy on Vercel
+  ```json
+  { "cohort": "python-data-analysis", "name": "…", "email": "…", "phone": "…",
+    "level": "…", "goal": "…", "createdAt": "2026-10-21T11:47:01.628Z" }
+  ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Collecting into a Google Sheet (free, ~5 minutes)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Create a Sheet with headers in row 1:
+   `createdAt | cohort | name | email | phone | level | goal`
+2. Extensions → Apps Script, paste:
+
+   ```js
+   function doPost(e) {
+     const r = JSON.parse(e.postData.contents);
+     SpreadsheetApp.getActiveSheet().appendRow(
+       [r.createdAt, r.cohort, r.name, r.email, r.phone, r.level, r.goal]
+     );
+     return ContentService.createTextOutput("ok");
+   }
+   ```
+3. Deploy → New deployment → Web app → Execute as *Me*, access *Anyone*.
+4. Copy the web-app URL into `REGISTRATION_WEBHOOK_URL` (e.g. `.env.local`, or your
+   host's environment settings).
+
+Zapier, Make, Formspree-style endpoints or your own API work the same way.

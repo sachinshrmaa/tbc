@@ -1,33 +1,44 @@
-import React from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import InstructorCard from "../components/InstructorCard";
+import Markdown from "../components/Markdown";
+import PageHeader from "../components/PageHeader";
+import { about } from "../../../data/about";
+
+export const metadata: Metadata = { title: "About" };
 
 export default function About() {
   return (
-    <div className="max-w-4xl mx-auto py-10 min-h-[500px] px-8">
-      <h1 className="text-3xl mb-6 text-center">
-        About <span className="text-purple-600">TBC.</span>
-      </h1>
-      <p className="text-slate-400">
-        The Basics Class or TBC is an initiative by Sachin Sharma to personally
-        teach students in the field of Software Engineering. Sachin strongly
-        believes that programming skills should be taught in a live manner and
-        by building real-world projects rather than just understanding the
-        syntax and the concepts. All the courses and workshops are a series of
-        live cohorts, focusing more on building projects and Open source
-        contributions and you get to interact with the instructor whenever you
-        get stuck.
-      </p>
-      <h1 className="text-3xl my-6">
-        About <span className="text-purple-600">Sachin.</span>
-      </h1>
-      <p className="text-slate-400">
-        Sachin is currently working as an Intern for a cloud-based startup
-        company, where he focuses on works related to frontend development. He&apos;s
-        also pursuing his Bachelor&apos;s degree in Computer Engineering from SIST
-        (Sikkim Institute of Science and Technology). Previously, he also
-        completed his Diploma in Computer Engineering with a distinction grade.
-        Apart from studies and work, he actively builds and contributes to
-        open-source projects on GitHub.
-      </p>
-    </div>
+    <>
+      <PageHeader eyebrow={<p className="label">About</p>} title={about.headline}>
+        <p>{about.intro}</p>
+      </PageHeader>
+
+      <section className="section">
+        <div className="container">
+          <ul className="grid gap-6 md:grid-cols-3">
+            {about.beliefs.map((b) => (
+              <li key={b.title} className="card p-6">
+                <h2 className="text-lg font-semibold">{b.title}</h2>
+                <p className="mt-2 text-muted">{b.text}</p>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-16">
+            <InstructorCard />
+          </div>
+
+          <div className="mx-auto mt-16 max-w-2xl text-lg">
+            <Markdown html={about.html} />
+            <p className="pt-8">
+              <Link href="/#cohorts" className="btn">
+                See upcoming cohorts &rarr;
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

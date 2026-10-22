@@ -2,11 +2,118 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #03152c;
+:root {
+  --paper: 245 238 225; /* beige */
+  --surface: 251 247 240;
+  --ink: 28 24 20;
+  --muted: 107 98 86;
+  --rule: 226 215 196;
+  --accent: 214 77 10; /* burnt orange */
+  --accent-ink: 255 255 255; /* text on accent */
 }
 
-.secondary-bg {
-  background-color: #032149;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: 20 20 19;
+    --surface: 28 28 26;
+    --ink: 236 234 228;
+    --muted: 156 153 146;
+    --rule: 48 47 44;
+    --accent: 251 146 60;
+    --accent-ink: 28 18 10;
+  }
 }
 
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  ::selection {
+    @apply bg-accent/20;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-site px-5 sm:px-8;
+  }
+
+  /* Inline text links: underlined, quiet until hovered. */
+  .link {
+    @apply underline decoration-rule decoration-1 underline-offset-4 transition-colors hover:decoration-accent hover:text-accent;
+  }
+
+  /* Small monospace label above a section. */
+  .label {
+    @apply font-mono text-xs uppercase tracking-wider text-muted;
+  }
+
+  .section {
+    @apply py-20 sm:py-24;
+  }
+
+  .section-title {
+    @apply mt-3 text-3xl font-semibold tracking-tight sm:text-4xl;
+  }
+
+  .card {
+    @apply rounded-xl border border-rule bg-surface;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-rule bg-surface px-3 py-1 font-mono text-xs uppercase tracking-wider text-muted;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-[15px] font-semibold text-accent-ink transition hover:opacity-90 active:translate-y-px disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-rule bg-surface px-5 py-3 text-[15px] font-medium transition hover:border-ink/40;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-rule bg-paper px-3.5 py-2.5 text-[16px] transition placeholder:text-muted/70 focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/10;
+  }
+
+  /* Markdown from content/*.md */
+  .md > * + * {
+    @apply mt-4;
+  }
+  .md a {
+    @apply underline decoration-rule decoration-1 underline-offset-4 transition-colors hover:decoration-accent hover:text-accent;
+  }
+  .md ul {
+    @apply list-disc space-y-1 pl-5;
+  }
+  .md ol {
+    @apply list-decimal space-y-1 pl-5;
+  }
+  .md strong {
+    @apply font-semibold text-ink;
+  }
+  .md h2,
+  .md h3 {
+    @apply mt-8 font-semibold tracking-tight text-ink;
+  }
+
+  /* Faint grid behind the hero. */
+  .grid-bg {
+    background-image: linear-gradient(rgb(var(--rule) / 0.6) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--rule) / 0.6) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 30%, transparent 75%);
+  }
+}

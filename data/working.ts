@@ -1,23 +1,19 @@
 interface Working {
   title: string;
   desc: string;
-  icon: string;
 }
 
 export const workings: Working[] = [
   {
-    title: "Pick a Class.",
-    desc: "Discover courses tailored to your learning preferences.",
-    icon: "./arrow-right.svg",
+    title: "Register",
+    desc: "Pick a cohort and fill in a short form. I'll email you payment details and the joining link.",
   },
   {
-    title: "Learn.",
-    desc: "Learn in interactive way by engaging with the instructor.",
-    icon: "./arrow-right.svg",
+    title: "Learn live",
+    desc: "Join small live sessions. Code along, ask questions, get unstuck in real time.",
   },
   {
-    title: "Build.",
-    desc: "Apply knowledge by building real-world projects.",
-    icon: "./target.svg",
+    title: "Build",
+    desc: "Every cohort ends with a real project you can show — not a certificate.",
   },
 ];
