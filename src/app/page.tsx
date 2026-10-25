@@ -34,7 +34,7 @@ export default function Home() {
               <span className="text-accent">You build, then learn.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted">
-              TheBasicsClass runs small, live coding cohorts for students across
+              The Basics Cohort runs small, live coding cohorts for students across
               India. No pre-recorded courses, no certificates — just a teacher, a
               group of peers, and real projects.
             </p>

@@ -9,8 +9,8 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: {
-    default: "TheBasicsClass — Live coding cohorts",
-    template: "%s — TheBasicsClass",
+    default: "The Basics Cohort — Live coding cohorts",
+    template: "%s — The Basics Cohort",
   },
   description:
     "Small, live coding cohorts taught by Sachin Sharma. Learn by building real projects, not by collecting certificates.",

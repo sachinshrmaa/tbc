@@ -38,13 +38,6 @@ export default function CohortRow({ cohort }: { cohort: Cohort }) {
           </Link>
         </h3>
         <p className="mt-3 text-muted">{cohort.summary}</p>
-        <div className="mt-6 flex flex-wrap gap-2">
-          {cohort.weeks.map((w) => (
-            <span key={w.title} className="rounded-md bg-ink/5 px-2.5 py-1 text-sm text-muted">
-              {w.title}
-            </span>
-          ))}
-        </div>
       </div>
       <div className="flex flex-col justify-between gap-6 border-t border-rule bg-paper/60 p-6 sm:p-8 md:border-l md:border-t-0">
         <dl className="grid grid-cols-[5.5rem_1fr] gap-y-2 text-[15px]">

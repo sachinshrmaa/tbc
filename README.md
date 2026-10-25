@@ -1,4 +1,4 @@
-# TheBasicsClass
+# The Basics Cohort
 
 A text-first site for running live coding cohorts and registering students.
 
@@ -19,6 +19,8 @@ site rebuilds and picks up the changes (locally, `npm run dev` shows them on rel
 - `content/about.md` — About page, plus the "Your teacher" card on the home page.
 - `content/payment.md` — your UPI ID. After registering, students see a QR code and a
   "Pay with UPI app" button with the cohort fee pre-filled. Leave `upiId` empty to hide it.
+- `content/legal/*.md` — Terms (`/terms`), Privacy (`/privacy`) and Refund Policy
+  (`/refund-policy`). Bump `updated` when you change one.
 
 Files whose name starts with `_` are ignored. `data/faq.ts` and `data/working.ts` are
 still plain TypeScript.

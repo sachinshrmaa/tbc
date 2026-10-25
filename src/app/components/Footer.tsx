@@ -17,6 +17,14 @@ const columns = [
     ],
   },
   {
+    title: "Legal",
+    links: [
+      { href: "/terms", label: "Terms" },
+      { href: "/privacy", label: "Privacy" },
+      { href: "/refund-policy", label: "Refunds" },
+    ],
+  },
+  {
     title: "Elsewhere",
     links: [
       { href: "https://github.com/sachinshrmaa", label: "GitHub" },
@@ -29,9 +37,9 @@ const columns = [
 export default function Footer() {
   return (
     <footer className="border-t border-rule bg-surface">
-      <div className="container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-6">
         <div className="lg:col-span-2">
-          <p className="font-semibold tracking-tight">TheBasicsClass</p>
+          <p className="font-semibold tracking-tight">The Basics Cohort</p>
           <p className="mt-2 max-w-xs text-[15px] text-muted">
             Small, live coding cohorts. You build, then learn.
           </p>
@@ -60,7 +68,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-rule">
         <p className="container py-6 text-sm text-muted">
-          &copy; 2022–{new Date().getFullYear()} TheBasicsClass. Made in India.
+          &copy; 2022–{new Date().getFullYear()} The Basics Cohort. Made in India.
         </p>
       </div>
     </footer>

@@ -15,7 +15,7 @@ export default function Navbar() {
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-ink font-mono text-[11px] font-bold text-paper">
             TBC
           </span>
-          <span className="hidden sm:inline">TheBasicsClass</span>
+          <span className="hidden sm:inline">The Basics Cohort</span>
         </Link>
         <nav className="flex items-center gap-1 text-[15px]">
           {links.map((l) => (
