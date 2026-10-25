@@ -16,7 +16,7 @@ site rebuilds and picks up the changes (locally, `npm run dev` shows them on rel
   (`/cohorts/<file-name>`). Copy `_template.md` to add one. Set `status` to `open`,
   `waitlist` or `closed`. Cohorts are listed by `startDate`.
 - `content/testimonials/*.md` — one file per testimonial, shown in file-name order.
-- `content/about.md` — About page, plus the "Your teacher" card on the home page.
+- `content/about.md` — About page, plus the "Your instructor" card on the home page.
 - `content/payment.md` — your UPI ID. After registering, students see a QR code and a
   "Pay with UPI app" button with the cohort fee pre-filled. Leave `upiId` empty to hide it.
 - `content/legal/*.md` — Terms (`/terms`), Privacy (`/privacy`) and Refund Policy

@@ -8,7 +8,7 @@ export default function InstructorCard() {
   return (
     <div className="card grid items-center gap-8 p-6 sm:p-8 md:grid-cols-[16rem_1fr] md:gap-12">
       <Image
-        src="/sachin.jpg"
+        src="/sachin.jpeg"
         alt="Sachin Sharma"
         width={480}
         height={640}
@@ -16,7 +16,7 @@ export default function InstructorCard() {
         className="aspect-[4/5] w-full max-w-[16rem] rounded-lg object-cover"
       />
       <div>
-        <p className="label">Your teacher</p>
+        <p className="label">Your instructor</p>
         <h2 className="section-title">{teacher.greeting}</h2>
         <p className="mt-5 text-lg">{teacher.lead}</p>
         <p className="mt-4 text-muted">{teacher.blurb}</p>

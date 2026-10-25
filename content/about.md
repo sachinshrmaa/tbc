@@ -31,7 +31,7 @@ That's why TBC cohorts end with a launched product, not a certificate. I want yo
 
 ## Before Wicklog
 
-I worked as a software engineer, building frontend products at a cloud-based startup. I studied Computer Engineering — a Diploma with distinction, then a Bachelor's at SIST (Sikkim Institute of Science and Technology).
+I worked as a software engineer, building frontend products at a cloud-based startup. I studied Computer Engineering — a Diploma with distinction, then a Bachelor's at SIST.
 
 ## Why I teach
 

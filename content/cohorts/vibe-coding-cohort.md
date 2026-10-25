@@ -1,10 +1,10 @@
 ---
 title: "Vibe Coding: Build and Launch Your First Product with AI"
-summary: A 10-day live cohort where you learn how AI really works, vibe code a full-stack product from scratch, and ship it to a live URL. No coding background needed.
+summary: A 12-day live cohort where you learn how AI really works, vibe code a full-stack product from scratch, and ship it to a live URL. No coding background needed.
 status: waitlist # open | waitlist | closed
-startDate: 2026-11-16 # YYYY-MM-DD; cohorts are listed by start date
-duration: 10 days
-schedule: Mon–Fri (2 weeks) · 7:00–8:30 pm IST
+startDate: TBD # YYYY-MM-DD; cohorts are listed by start date
+duration: 12 days
+schedule: TBD
 price: 2999 # INR, 0 = free (no payment step)
 seats: 30
 forWho:
@@ -103,7 +103,7 @@ project: A real, working full-stack web product of your own - with a database, u
 
 Most people use AI like a search box and get random results. This cohort teaches you to use it like a **senior engineer on your team** - one you can direct, review, and trust.
 
-In 10 live sessions you go from idea to launched product. You will learn how AI actually works (so you know *why* some prompts work and others fail), then build a complete full-stack app step by step: UI, database, authentication, integrations, security, and deployment. Every day is hands-on - you build your own project alongside the live walkthrough, not a throwaway demo.
+In 12 live sessions you go from idea to launched product. You will learn how AI actually works (so you know *why* some prompts work and others fail), then build a complete full-stack app step by step: UI, database, authentication, integrations, security, and deployment. Every day is hands-on - you build your own project alongside the live walkthrough, not a throwaway demo.
 
 ## What you will walk away with
 
@@ -115,7 +115,7 @@ In 10 live sessions you go from idea to launched product. You will learn how AI 
 
 ## How it works
 
-- **10 live sessions**, 1-2 hours each (typically about 90 minutes), Monday to Friday over 2 weeks
+- **12 live sessions**, 1-2 hours each (typically about 90 minutes), Monday to Friday over 2 weeks
 - Each session: short recap, concept demo, live build-along, and a small assignment
 - **Doubt support** in a private community group between sessions
 - Session recordings shared for anyone who misses a class
